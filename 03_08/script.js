@@ -12,7 +12,8 @@ const backpack = {
     right: 26,
   },
   lidOpen: false,
-  toggleLid: function (lidStatus) {
+  // shorthand but not easily readable
+  toggleLid: (lidStatus) {  
     this.lidOpen = lidStatus;
   },
   newStrapLength: function (lengthLeft, lengthRight) {

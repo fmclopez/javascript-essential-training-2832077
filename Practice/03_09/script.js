@@ -23,4 +23,29 @@ const backpack = {
     this.strapLength.left = lengthLeft;
     this.strapLength.right = lengthRight;
   },
+  renameBackpack: function (newName) {
+    this.name = newName;
+  },
+  changeVolume: function (newVol) {
+    this.volume = newVol;
+  },
+  changeColor: function (num) {
+    if (num >= 5) {
+      console.log("Whoa! greater than or equal to 5!!!");
+      this.color = "green";
+    } else if (num < 5) {
+      console.log("Aww... less than 5 :<");
+      this.color = "red";
+    }
+  },
 };
+
+console.log(backpack.name);
+backpack.renameBackpack("My Herschel Backpack");
+console.log("Backpack has been renamed to %s.", backpack.name);
+
+var oldColor = backpack.color;
+
+console.log(backpack.color);
+backpack.changeColor(6);
+console.log("From %s to %s", oldColor, backpack.color);
