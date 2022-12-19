@@ -57,3 +57,29 @@ const content = `
       }</span></li>
     </ul>  
 `;
+
+const image = `
+<img src = ${frogpack.image}> <img/>
+<figcaption> This is a backpack </figcaption>
+`;
+
+const createFigure = () => {
+  const fig = document.createElement("figure");
+  fig.innerHTML = image;
+
+  return fig;
+};
+
+const createArticle = () => {
+  const article = document.createElement("article");
+  article.classList.add("article");
+  article.setAttribute("id", "frog-backpack");
+  article.innerHTML = content;
+  article.prepend(createFigure());
+
+  return article;
+};
+
+let x = createArticle();
+const main = document.querySelector("main");
+main.append(x);
